@@ -1,0 +1,29 @@
+$ curl -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d 'null'
+
+
+(curl hariu ogoogui, holbolt tasarsan)
+
+$ curl -s -o /dev/null -w "%{http_code}" localhost:3000/api/stats
+000  (server untarsan)
+
+# server konsoliin garalt (node app.js):
+Уншлагын жагсаалт: http://localhost:3000
+/Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:130
+        title: esc(data.title || ''),
+                        ^
+
+TypeError: Cannot read properties of null (reading 'title')
+    at IncomingMessage.<anonymous> (/Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:130:25)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.18.0
+
+[exited with code 1]
+
+# 2 dahi udaa davtsan (16:44)
+$ curl -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d 'null'
+curl exit: 52
+$ curl localhost:3000/api/stats
+000

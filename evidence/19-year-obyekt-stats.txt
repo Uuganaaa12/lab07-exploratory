@@ -1,0 +1,35 @@
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"Y","author":"Y","year":{"toString":1,"valueOf":1}}'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 08:49:26 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":4}
+curl exit: 0
+
+$ curl -i localhost:3000/api/books
+HTTP/1.1 200 OK
+[{"id":1,"title":"Тунгалаг Тамир","author":"Ч.Лодойдамба","year":1971},{"id":2,"title":"Clean Code","author":"Robert C. Martin","year":2008},{"id":3,"title":"The Pragmatic Programmer","author":"D.Thomas & A.Hunt","year":1999},{"id":4,"title":"Y","author":"Y","year":{"toString":1,"valueOf":1}}]
+$ curl -i localhost:3000/api/stats
+curl exit: 52
+
+# server konsoliin garalt (node app.js):
+Уншлагын жагсаалт: http://localhost:3000
+/Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:116
+      const newest = books.length ? Math.max(...books.map((b) => Number(b.year) || 0)) : 0;
+                                                                 ^
+
+TypeError: Cannot convert object to primitive value
+    at Number (<anonymous>)
+    at /Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:116:66
+    at Array.map (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:116:55)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.18.0
+
+[exited with code 1]

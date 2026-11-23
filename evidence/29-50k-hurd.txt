@@ -1,0 +1,8 @@
+# ~50010 nom baihad
+$ curl -s -o /dev/null -w '%{http_code} %{size_download}B %{time_total}s' 'localhost:3000/api/books'
+200 2928423B 0.023812s
+$ curl -s -o /dev/null -w '%{http_code} %{size_download}B %{time_total}s' 'localhost:3000/api/stats'
+200 29B 0.001935s
+$ curl -s -G -o /dev/null -w '%{http_code} %{size_download}B %{time_total}s' --data-urlencode 'q=Ринчен' localhost:3000/api/books
+200 79B 0.039733s
+# tailbar: kirill-iig URL-d kodloogui (raw) ilgeehed 400 garsan, ene ni HTTP-iin durem, app-iin aldaa bish

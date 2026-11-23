@@ -1,0 +1,14 @@
+$ curl -s 'localhost:3000/api/books?q=%23'
+1 nom: ['C# in Depth']
+$ curl -s 'localhost:3000/api/books?q=%23%23'
+0 nom: []
+$ curl -s 'localhost:3000/api/books?q=zz%23'
+0 nom: []
+$ curl -s 'localhost:3000/api/books?q=%3F'
+0 nom: []
+$ curl -s 'localhost:3000/api/books?q=%26'
+1 nom: ['The Pragmatic Programmer']
+$ curl -s 'localhost:3000/api/books?q=a%26b'
+0 nom: []
+$ curl -s 'localhost:3000/api/books?q=%2B'
+1 nom: ['C++ Primer']

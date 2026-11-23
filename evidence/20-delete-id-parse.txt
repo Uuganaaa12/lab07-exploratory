@@ -1,0 +1,28 @@
+$ curl -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"Id Test","author":"I","year":2000}'
+{"result":"OK","id":5}
+
+$ curl -i -X DELETE localhost:3000/api/books/5xyz
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 08:50:45 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"ERROR_NOT_FOUND"}
+
+$ curl -s localhost:3000/api/books
+[{"id":1,"title":"Тунгалаг Тамир","author":"Ч.Лодойдамба","year":1971},{"id":2,"title":"Clean Code","author":"Robert C. Martin","year":2008},{"id":3,"title":"The Pragmatic Programmer","author":"D.Thomas & A.Hunt","year":1999},{"id":5,"title":"Id Test","author":"I","year":2000}]
+
+$ curl -i -X DELETE localhost:3000/api/books/05
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 08:50:52 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK"}
+
+$ curl -s localhost:3000/api/books
+[{"id":1,"title":"Тунгалаг Тамир","author":"Ч.Лодойдамба","year":1971},{"id":2,"title":"Clean Code","author":"Robert C. Martin","year":2008},{"id":3,"title":"The Pragmatic Programmer","author":"D.Thomas & A.Hunt","year":1999}]

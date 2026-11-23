@@ -1,0 +1,37 @@
+# Chrome-d getComputedStyle (node step.cjs info), [x] = latin useg
+{
+ "lang": "mn",
+ "title": "Уншлагын жагсаалт",
+ "texts": [
+  "H1: Уншлагын жагсаалт | rgb(30, 39, 97) on rgba(0, 0, 0, 0)",
+  "BUTTON: Нэмэ[x] | rgb(255, 255, 255) on rgb(30, 39, 97)",
+  "BUTTON: Хайх | rgb(255, 255, 255) on rgb(91, 125, 177)",
+  "BUTTON: Бүгд | rgb(255, 255, 255) on rgb(91, 125, 177)",
+  "TH: Гарчиг | rgb(34, 34, 34) on rgb(202, 220, 252)",
+  "TH: Зохиолч | rgb(34, 34, 34) on rgb(202, 220, 252)",
+  "TH: Он | rgb(34, 34, 34) on rgb(202, 220, 252)",
+  "BUTTON: Устгах | rgb(255, 255, 255) on rgb(44, 122, 75)",
+  "BUTTON: Устгах | rgb(255, 255, 255) on rgb(44, 122, 75)",
+  "BUTTON: Устгах | rgb(255, 255, 255) on rgb(44, 122, 75)",
+  "BUTTON: Устгах | rgb(255, 255, 255) on rgb(44, 122, 75)",
+  "BUTTON: Устгах | rgb(255, 255, 255) on rgb(44, 122, 75)",
+  "DIV: Нийт ном: 6 · Хамгийн шинэ он: 2019 | rgb(85, 85, 85) on rgba(0, 0, 0, 0)",
+  "FOOTER: Хуучин хувилбар · Уншлагын жагсаалт [v]2.0 | rgb(136, 136, 136) on rgba(0, 0, 0, 0)"
+ ],
+ "inputs": [
+  "title type=text max=-1 label=baihgui",
+  "author type=text max=-1 label=baihgui",
+  "year type=text max=-1 label=baihgui",
+  "q type=text max=-1 label=baihgui"
+ ],
+ "link": [
+  "Хуучин хувилбар -> /old | rgb(0, 0, 238) on rgba(0, 0, 0, 0)"
+ ]
+}
+
+# WCAG kontrast (tsagaan tekst / ongo):
+Nemeh tovch 13.83 :1
+Hailt/Bugd tovch 4.19 :1
+Ustgah tovch 5.26 :1
+stats tekst 7.46 :1
+footer tekst 3.54 :1

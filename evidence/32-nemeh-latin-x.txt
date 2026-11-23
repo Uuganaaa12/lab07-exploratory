@@ -1,0 +1,9 @@
+$ curl -s localhost:3000/ | grep -o 'class="add"[^<]*<'
+class="add" onclick="addBook()">Нэмэx<
+
+# 'Нэмэx' tovchnii useg bureer Unicode kod:
+U+041D Н CYRILLIC CAPITAL LETTER EN
+U+044D э CYRILLIC SMALL LETTER E
+U+043C м CYRILLIC SMALL LETTER EM
+U+044D э CYRILLIC SMALL LETTER E
+U+0078 x LATIN SMALL LETTER X

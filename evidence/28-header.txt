@@ -1,0 +1,8 @@
+$ curl -s -D - -o /dev/null localhost:3000/   (GET-eer, zovhon header)
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Mon, 23 Nov 2026 09:01:28 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+

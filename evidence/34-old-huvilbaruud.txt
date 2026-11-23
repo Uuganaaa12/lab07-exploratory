@@ -1,0 +1,8 @@
+$ curl -s -o /dev/null -w '%{http_code}' 'localhost:3000/old?v=1'
+500
+$ curl -s -o /dev/null -w '%{http_code}' 'localhost:3000/OLD'
+404
+$ curl -s -o /dev/null -w '%{http_code}' 'localhost:3000/old.html'
+404
+$ curl -s -o /dev/null -w '%{http_code}' 'localhost:3000/v1'
+404

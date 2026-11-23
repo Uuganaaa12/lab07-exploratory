@@ -1,0 +1,10 @@
+$ curl -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '5'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 08:44:39 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":6}
+

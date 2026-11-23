@@ -1,0 +1,24 @@
+# node bulk.cjs 129000 (API-aar 129000 nom, niit ~130000)
+$ curl -i localhost:3000/api/stats
+
+curl exit: 0
+$ curl -s -o /dev/null -w "%{http_code}" localhost:3000/
+000
+
+# server konsoliin garalt (node app.js):
+Уншлагын жагсаалт: http://localhost:3000
+/Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:116
+      const newest = books.length ? Math.max(...books.map((b) => Number(b.year) || 0)) : 0;
+                                         ^
+
+RangeError: Maximum call stack size exceeded
+    at IncomingMessage.<anonymous> (/Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:116:42)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.18.0
+
+[exited with code 1]
+
+# Hyazgaar haih: 100001 nom -> stats 200 {"total":100001,...}; 110001 nom -> curl hariugui, server untarsan (RangeError)

@@ -1,0 +1,34 @@
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":null,"author":null,"year":null}'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:11:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":4}
+$ curl localhost:3000/api/stats
+{"total":5,"newest":2008}
+
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"A","author":{"toString":1,"valueOf":1},"year":2000}'
+curl exit: 52
+$ curl localhost:3000/api/stats
+000
+
+# server konsoliin garalt (node app.js):
+Уншлагын жагсаалт: http://localhost:3000
+/Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:14
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                   ^
+
+TypeError: Cannot convert object to primitive value
+    at String (<anonymous>)
+    at esc (/Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:14:20)
+    at IncomingMessage.<anonymous> (/Users/uugnaa/development/2027A/ChanariinBatalgaaBaTurshilt/lab07-exploratory/app.js:131:17)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.18.0
+
+[exited with code 1]
