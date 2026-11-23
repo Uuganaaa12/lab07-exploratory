@@ -58,3 +58,26 @@ Transfer-Encoding: chunked
 
 {"total":8,"newest":10000}
 
+
+# Infinity:
+
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"Inf","author":"A","year":"Infinity"}'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:24 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":4}
+
+$ curl -i localhost:3000/api/stats
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:24 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"total":5,"newest":null}
+

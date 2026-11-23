@@ -7,11 +7,12 @@
 1. Браузераар http://localhost:3000 нээ.
 2. Гарчиг `On1`, Зохиолч `X`, Он `999` бичээд «Нэмэх» дар.
 3. Гарчиг, Онг дараалан `On2` / `2101`, `On3` / `1999.5`, `On4` / `abc`, `On5` / `1e4` болгож тус бүр «Нэмэх» дар.
-4. Терминалд `curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"T3","author":"A","year":[2050]}'` ба `year`-т `true`, `"hello"` өгч дахин илгээ.
+4. Гарчиг `On6`, Он `Infinity` болгоод «Нэмэх» дар.
+5. Терминалд `curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"T3","author":"A","year":[2050]}'` ба `year`-т `true`, `"hello"` өгч дахин илгээ.
 
-Хүлээгдэж байсан: «Он нь 1000-2100 хоорондох бүхэл тоо.» Алхам 2-4 бүгд алдааны мессеж эсвэл 400-аар татгалзагдах ёстой.  
-Бодит үр дүн:     Бүгд «Ном нэмэгдлээ» мессежтэй нэмэгдэнэ. Хүснэгтэд «999», «2,101», «1,999.5», «NaN», «10,000» гэж харагдана, «Хамгийн шинэ он» 10000 болно. API `[2050]`, `true`, `"hello"` бүгдэд `201 Created` буцааж, хүснэгтэд «2,050», «1», «NaN» гэж харагдана. `-5`, `0`, `0x7E4` («2,020»), 20 оронтой тоо ч орно.
+Хүлээгдэж байсан: «Он нь 1000-2100 хоорондох бүхэл тоо.» Алхам 2-5 бүгд алдааны мессеж эсвэл 400-аар татгалзагдах ёстой.  
+Бодит үр дүн:     Бүгд «Ном нэмэгдлээ» мессежтэй нэмэгдэнэ. Хүснэгтэд «999», «2,101», «1,999.5», «NaN», «10,000» гэж харагдана, «Хамгийн шинэ он» 10000 болно. Алхам 4-т он «∞» гэж харагдаж, доор «Хамгийн шинэ он: null» болж эвдэрнэ. API `[2050]`, `true`, `"hello"` бүгдэд `201 Created` буцааж, хүснэгтэд «2,050», «1», «NaN» гэж харагдана. `-5`, `0` ч орно.
 
 Ноцтой байдал: Major. Утгагүй он хадгалагдаж, «Хамгийн шинэ он» статистикийг гажуудуулна.  
-Хавсралт:      ![BUG-04](../screenshots/09-on-999.png) ![](../screenshots/10-on-2101.png) ![](../screenshots/11-on-butarhai.png) ![](../screenshots/12-on-abc-NaN.png) ![](../screenshots/13-on-1e4-shine-10000.png) ![](../screenshots/52-year-massiv-bool.png) · [evidence/bug-04-curl.txt](../evidence/bug-04-curl.txt)  
+Хавсралт:      ![BUG-04](../screenshots/09-on-999.png) ![](../screenshots/10-on-2101.png) ![](../screenshots/11-on-butarhai.png) ![](../screenshots/12-on-abc-NaN.png) ![](../screenshots/13-on-1e4-shine-10000.png) ![](../screenshots/15-on-infinity-null.png) ![](../screenshots/52-year-massiv-bool.png) · [evidence/bug-04-curl.txt](../evidence/bug-04-curl.txt)  
 Олдсон аялал:  Antisocial, Saboteur
