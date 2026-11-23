@@ -1,0 +1,23 @@
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d 'null'
+curl: (52) Empty reply from server
+(curl exit 52)
+
+
+$ curl -i localhost:3000/api/stats
+curl: (7) Failed to connect to localhost port 3000 after 0 ms: Couldn't connect to server
+(curl exit 7)
+
+
+# Сервер унасан. node app.js терминалын гаралт:
+Уншлагын жагсаалт: http://localhost:3000
+app.js:130
+        title: esc(data.title || ''),
+                        ^
+
+TypeError: Cannot read properties of null (reading 'title')
+    at IncomingMessage.<anonymous> (app.js:130:25)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.18.0

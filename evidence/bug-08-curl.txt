@@ -1,0 +1,30 @@
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"Tom & Jerry","author":"<b>x</b>","year":2000}'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":4}
+
+$ curl -i localhost:3000/api/books
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Mon, 23 Nov 2026 09:28:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+[{"id":1,"title":"Тунгалаг Тамир","author":"Ч.Лодойдамба","year":1971},{"id":2,"title":"Clean Code","author":"Robert C. Martin","year":2008},{"id":3,"title":"The Pragmatic Programmer","author":"D.Thomas & A.Hunt","year":1999},{"id":4,"title":"Tom &amp; Jerry","author":"&lt;b&gt;x&lt;/b&gt;","year":2000}]
+
+$ curl -i 'localhost:3000/api/books?q=Tom%20%26%20Jerry'
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Mon, 23 Nov 2026 09:28:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+[]
+

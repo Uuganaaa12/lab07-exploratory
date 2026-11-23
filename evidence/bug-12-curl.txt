@@ -1,0 +1,70 @@
+$ curl -i localhost:3000/api/books
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Mon, 23 Nov 2026 09:28:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+[{"id":1,"title":"Тунгалаг Тамир","author":"Ч.Лодойдамба","year":1971},{"id":2,"title":"Clean Code","author":"Robert C. Martin","year":2008},{"id":3,"title":"The Pragmatic Programmer","author":"D.Thomas & A.Hunt","year":1999}]
+
+$ curl -i localhost:3000/api/stats
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"total":4,"newest":2008}
+
+$ curl -i -X DELETE localhost:3000/api/books/1
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK"}
+
+$ curl -i -X DELETE localhost:3000/api/books/2
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK"}
+
+$ curl -i -X DELETE localhost:3000/api/books/3
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK"}
+
+$ curl -i localhost:3000/api/books
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Mon, 23 Nov 2026 09:28:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+[]
+
+$ curl -i localhost:3000/api/stats
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"total":1,"newest":0}
+

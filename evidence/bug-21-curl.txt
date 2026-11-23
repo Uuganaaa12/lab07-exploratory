@@ -1,0 +1,46 @@
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"Y","author":"Y","year":{"toString":1,"valueOf":1}}'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:31 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":4}
+
+$ curl -i localhost:3000/api/books
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Mon, 23 Nov 2026 09:28:31 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+[{"id":1,"title":"Тунгалаг Тамир","author":"Ч.Лодойдамба","year":1971},{"id":2,"title":"Clean Code","author":"Robert C. Martin","year":2008},{"id":3,"title":"The Pragmatic Programmer","author":"D.Thomas & A.Hunt","year":1999},{"id":4,"title":"Y","author":"Y","year":{"toString":1,"valueOf":1}}]
+
+$ curl -i localhost:3000/api/stats
+curl: (52) Empty reply from server
+(curl exit 52)
+
+
+$ curl -i localhost:3000/api/books
+curl: (7) Failed to connect to localhost port 3000 after 1 ms: Couldn't connect to server
+(curl exit 7)
+
+
+# Сервер унасан. node app.js терминалын гаралт:
+Уншлагын жагсаалт: http://localhost:3000
+app.js:116
+      const newest = books.length ? Math.max(...books.map((b) => Number(b.year) || 0)) : 0;
+                                                                 ^
+
+TypeError: Cannot convert object to primitive value
+    at Number (<anonymous>)
+    at app.js:116:66
+    at Array.map (<anonymous>)
+    at IncomingMessage.<anonymous> (app.js:116:55)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.18.0

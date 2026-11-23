@@ -1,0 +1,60 @@
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"T1","author":"A","year":"hello"}'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:23 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":4}
+
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"T2","author":"A","year":"1e4"}'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:23 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":5}
+
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"T3","author":"A","year":[2050]}'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:23 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":6}
+
+$ curl -i -X POST localhost:3000/api/books -H 'Content-Type: application/json' -d '{"title":"T4","author":"A","year":true}'
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:23 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"result":"OK","id":7}
+
+$ curl -i localhost:3000/api/books
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Mon, 23 Nov 2026 09:28:23 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+[{"id":1,"title":"Тунгалаг Тамир","author":"Ч.Лодойдамба","year":1971},{"id":2,"title":"Clean Code","author":"Robert C. Martin","year":2008},{"id":3,"title":"The Pragmatic Programmer","author":"D.Thomas & A.Hunt","year":1999},{"id":4,"title":"T1","author":"A","year":"hello"},{"id":5,"title":"T2","author":"A","year":"1e4"},{"id":6,"title":"T3","author":"A","year":[2050]},{"id":7,"title":"T4","author":"A","year":true}]
+
+$ curl -i localhost:3000/api/stats
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Mon, 23 Nov 2026 09:28:23 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"total":8,"newest":10000}
+
